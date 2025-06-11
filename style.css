@@ -389,10 +389,13 @@ body {
     background: var(--bg-secondary);
 }
 
+/* --- DÉBUT : VERSION LA PLUS RÉCENTE (lignes 575 à 709) --- */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
+    padding: 2rem 0;
 }
 
 .project-card {
@@ -400,14 +403,129 @@ body {
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: var(--shadow);
+    position: relative;
+    cursor: pointer;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+    z-index: 10;
 }
+
+.project-description-short {
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.project-description-detailed {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    background: var(--bg-secondary);
+    padding: 0 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.project-card:hover .project-description-short {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.project-card:hover .project-description-detailed {
+    display: block;
+    opacity: 1;
+    max-height: 400px;
+    padding: 1.5rem;
+    animation: slideDown 0.4s ease-out;
+}
+
+.project-description-detailed h4 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.project-description-detailed h4:first-child {
+    margin-top: 0;
+}
+
+.project-description-detailed ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+}
+
+.project-description-detailed li {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.project-description-detailed li::before {
+    content: '→';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.project-content {
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-content {
+    padding-bottom: 2rem;
+}
+
+/* Animation pour l'apparition du contenu détaillé */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajustements pour mobile */
+@media screen and (max-width: 768px) {
+    .project-card:hover {
+        transform: scale(1.02) translateY(-5px);
+    }
+
+    .project-description-detailed {
+        font-size: 0.85rem;
+    }
+
+    .project-description-detailed li {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-grid {
+        gap: 2rem;
+        padding: 1rem 0;
+    }
+}
+
+/* --- FIN : VERSION LA PLUS RÉCENTE --- */
 
 .project-image {
     height: 200px;
@@ -422,10 +540,6 @@ body {
 .project-image i {
     font-size: 3rem;
     color: var(--primary-color);
-}
-
-.project-content {
-    padding: 1.5rem;
 }
 
 .project-content h3 {
@@ -657,89 +771,5 @@ body {
 
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .about-stats {
-        justify-content: center;
-    }
-
-    .contact-content {
-        grid-template-columns: 1fr;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .typing-text {
-        font-size: 1.2rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .container {
-        padding: 0 15px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn {
-        width: 200px;
-        justify-content: center;
-    }
-
-    .about-stats {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .code-animation {
-        width: 250px;
-        height: 150px;
-        padding: 15px;
-    }
-
-    .image-placeholder {
-        width: 200px;
-        height: 200px;
-    }
-
-    .image-placeholder i {
-        font-size: 3rem;
     }
 }
