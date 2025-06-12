@@ -2,11 +2,63 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>E-Commerce Flask</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Flask - Portfolio Luca</title>
     <link rel="stylesheet" href="../StyleSheet/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<img src="../images/client_change_information.png" alt="client change information">
+<div class="project-page-container">
+    <h1 class="project-page-title">E-Commerce Flask</h1>
+
+    <div class="project-image-container">
+        <img src="../images/client_change_information.png" alt="Interface de modification des informations client">
+    </div>
+
+    <div class="project-description-container" style="padding: 2rem; background: var(--bg-secondary); margin: 2rem 0; border-radius: 15px;">
+        <h2 style="color: var(--primary-color); margin-bottom: 1.5rem;">Description du Projet</h2>
+        <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            L’interface présentée permet à l’utilisateur de modifier ses informations personnelles (login, nom, email) de manière sécurisée.
+            Cette fonctionnalité illustre la maîtrise de la gestion des comptes clients, l’intégration front-end/back-end et la validation des données côté serveur.
+        </p>
+        <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+            Le routage des requêtes HTTP dans Flask et l’utilisation des sessions assurent une expérience fluide et sécurisée.
+            La clarté du formulaire, la gestion des erreurs et la possibilité de revenir en arrière témoignent d’une conception
+            ergonomique et modulaire, conforme aux bonnes pratiques du développement web moderne.
+            Cette figure met en avant la capacité à relier l’interface utilisateur à la base de données tout en garantissant
+            la sécurité et la maintenabilité du code.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+            <div>
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Savoirs Acquis</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.6;">
+                    <li>Framework Flask</li>
+                    <li>Gestion de base de données MySQL </li>
+                    <li>Templates Jinja2</li>
+                    <li>Sessions utilisateur et authentification</li>
+                    <li>Routage URL et gestion des requêtes HTTP</li>
+                    <li>Intégration front-end/back-end</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Savoir-faire Développés</h3>
+                <ul style="color: var(--text-secondary); line-height: 1.6;">
+                    <li>Sécurisation des formulaires et validation des données</li>
+                    <li>Déploiement et configuration sur PythonAnywhere</li>
+                    <li>Gestion professionnelle des erreurs et exceptions</li>
+                    <li>Architecture modulaire et code maintenable</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 2rem;">
+        <a href="index.html" class="btn btn-primary">
+            <i class="fas fa-arrow-left"></i> Retour au Portfolio
+        </a>
+    </div>
+</div>
 </body>
 </html>
